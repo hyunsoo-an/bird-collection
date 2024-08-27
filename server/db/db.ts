@@ -41,3 +41,8 @@ export function deleteBird(id: number) {
 export function addBird(newBird: Bird) {
   return db('birds').insert(newBird)
 }
+
+// Updating bird
+export function updateBird(id: number) {
+  return db('birds').where({ id }).update
+}
