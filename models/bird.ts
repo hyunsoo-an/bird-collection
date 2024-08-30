@@ -1,5 +1,5 @@
 export default interface Bird {
-  id: number
+  id?: number
   name: string
   type: string
   color: string

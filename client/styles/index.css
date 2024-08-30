@@ -1,8 +1,86 @@
-body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
+.form {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.form__input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form__input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+button.button-primary {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.button-primary:hover {
+  background-color: #003f7f;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.bird-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.bird-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.bird-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.bird-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+}
+
+body {
+  background-color: #adadad;
 }

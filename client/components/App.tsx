@@ -5,8 +5,9 @@ function App() {
       <header className="header">
         <h1>My Collection</h1>
       </header>
-      <section className="main">{/* add your code here */}</section>
-      <Birds />
+      <section className="main">
+        <Birds />
+      </section>
     </>
   )
 }
