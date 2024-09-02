@@ -17,7 +17,7 @@ function AddBird() {
   const addMutation = useMutation({
     mutationFn: async (bird: Bird) => addBird(bird),
     onSuccess() {
-      queryClient.invalidateQueries({ queryKey: ['birds'] })
+      queryClient.invalidateQueries({ queryKey: ['getBirds'] })
     },
   })
 
