@@ -15,14 +15,8 @@
   border-radius: 4px;
 }
 
-.form__input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
-}
-
 button.button-primary {
-  background-color: #0056b3;
+  background-color: gray;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -33,7 +27,7 @@ button.button-primary {
 }
 
 button.button-primary:hover {
-  background-color: #003f7f;
+  background-color: #535353;
 }
 
 label {
@@ -83,4 +77,47 @@ h1 {
 
 body {
   background-color: #adadad;
+}
+
+.bird-profile-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.bird-profile-container p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.bird-profile-container strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.bird-profile-container p + p {
+  margin-top: 10px;
+}
+
+.bird-profile-container {
+  text-align: center;
+}
+
+.delete-button {
+  background-color: gray;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.delete-button:hover {
+  background-color: #535353;
 }
