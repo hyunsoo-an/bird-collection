@@ -30,11 +30,10 @@
     ]
   },
   "dependencies": {
-    "@devacademy/eslint-config": "^1.10.1",
     "express": "^4.17.2",
     "knex": "^2.5.1",
-    "sqlite3": "^5.1.6",
-    "superagent": "^8.1.2"
+    "sqlite3": "^5.1.6"
+
   },
   "devDependencies": {
     "@devacademy/eslint-config": "^1.10.1",
@@ -70,6 +69,7 @@
     "tsx": "^3.12.7",
     "typescript": "^5.3.3",
     "vite": "^5.0.0",
+    "superagent": "^8.1.2",
     "vitest": "^1.2.0"
   },
   "prettier": {
