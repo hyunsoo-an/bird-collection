@@ -15,11 +15,13 @@ router.get('/', async (req, res) => {
   }
 })
 
-// GET 'api/v1/birds/:id'
 router.get('/:id', async (req, res) => {
   const id = Number(req.params.id)
   try {
     const bird = await db.getBirdById(id)
+    if (!bird) {
+      return res.status(404).json({ error: 'Bird not found' })
+    }
     res.json(bird)
   } catch (error) {
     console.error(`Database error: ${error}`)

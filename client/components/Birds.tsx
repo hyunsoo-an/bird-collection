@@ -1,14 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
 import { getBirds } from '../apis/birdsApi'
-import AddBird from './AddBird'
+import { Link } from 'react-router-dom'
 
 function Birds() {
-  const { data, isPending, isError, error } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ['getBirds'],
-    queryFn: () => getBirds(),
+    queryFn: getBirds,
   })
 
-  if (isPending) {
+  if (isLoading) {
     return <p>Loading...</p>
   }
 
@@ -18,8 +18,6 @@ function Birds() {
   }
 
   const birdEmojis = ['🦜', '🦅', '🐧', '🐦‍⬛', '🦉']
-
-  console.log('Birds Component', data)
 
   return (
     <>
@@ -31,12 +29,13 @@ function Birds() {
           return (
             <div key={bird.id} className="bird-item">
               <span className="bird-icon">{randomEmoji}</span>
-              <p>{bird.name}</p>
+              <Link to={`/birds/${bird.id}`}>
+                <p>{bird.name}</p>
+              </Link>
             </div>
           )
         })}
       </div>
-      <AddBird />
     </>
   )
 }

@@ -1,4 +1,6 @@
 import Birds from './Birds'
+import AddBird from './AddBird'
+
 function App() {
   return (
     <>
@@ -7,6 +9,7 @@ function App() {
       </header>
       <section className="main">
         <Birds />
+        <AddBird />
       </section>
     </>
   )
