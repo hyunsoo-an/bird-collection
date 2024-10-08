@@ -14,27 +14,28 @@ function Birds() {
 
   if (isError) {
     console.error(error.message)
-    return <p>Error...</p>
+    return <p>Error: {error.message}</p>
   }
-
-  const birdEmojis = ['🦜', '🦅', '🐧', '🐦‍⬛', '🦉']
 
   return (
     <>
-      <h1>Birds</h1>
-      <div className="bird-grid">
-        {data.map((bird) => {
-          const randomEmoji =
-            birdEmojis[Math.floor(Math.random() * birdEmojis.length)]
-          return (
-            <div key={bird.id} className="bird-item">
-              <span className="bird-icon">{randomEmoji}</span>
-              <Link to={`/birds/${bird.id}`}>
-                <p>{bird.name}</p>
-              </Link>
-            </div>
-          )
-        })}
+      <h2 className="text-2xl font-semibold mb-4">All Birds</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {data.map((bird) => (
+          <div
+            key={bird.id}
+            className="border border-gray-300 rounded-lg overflow-hidden shadow-md"
+          >
+            <Link to={`/birds/${bird.id}`}>
+              <img
+                src={'/images/bird-profile.avif'}
+                alt={`Profile of ${bird.name}`}
+                className="w-full h-40 object-cover"
+              />
+              <p className="p-4 text-center font-medium">{bird.name}</p>
+            </Link>
+          </div>
+        ))}
       </div>
     </>
   )
