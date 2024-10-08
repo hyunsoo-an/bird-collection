@@ -12,7 +12,7 @@ function App() {
           My Bird Collection
         </h1>
       </header>
-      <section className="w-full max-w-2xl ">
+      <section className="w-full max-w-2xl">
         <div>
           <AddBird />
         </div>

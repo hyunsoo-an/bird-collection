@@ -4,15 +4,13 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { addBird } from '../apis/birdsApi.ts'
 
 function AddBird() {
-  const [{ birdName, type, color, size, habitat, canFly }, setFormValues] =
-    useState({
-      birdName: '',
-      type: '',
-      color: '',
-      size: '',
-      habitat: '',
-      canFly: false,
-    })
+  const [{ birdName, type, color, size, habitat }, setFormValues] = useState({
+    birdName: '',
+    type: '',
+    color: '',
+    size: '',
+    habitat: '',
+  })
 
   const queryClient = useQueryClient()
 
@@ -24,10 +22,10 @@ function AddBird() {
   })
 
   const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = evt.currentTarget
+    const { name, value } = evt.currentTarget
     setFormValues((previous) => ({
       ...previous,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }))
   }
 
@@ -39,7 +37,6 @@ function AddBird() {
       color,
       size,
       habitat,
-      canFly,
     })
   }
 
@@ -112,19 +109,6 @@ function AddBird() {
           value={habitat}
           onChange={onChange}
           className="border border-gray-300 rounded w-full py-2 px-3"
-        />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="canFly" className="block text-sm font-medium mb-1">
-          Fly
-        </label>
-        <input
-          type="checkbox"
-          name="canFly"
-          id="canFly"
-          checked={canFly}
-          onChange={onChange}
-          className="mr-2 leading-tight w-6 h-6"
         />
       </div>
       <button
