@@ -13,7 +13,8 @@ export async function seed(knex) {
       color: 'black, white',
       size: 'medium',
       habitat: 'antarctic',
-      can_fly: false,
+      fly: false,
+      note: 'They are known for swimming skillfully in cold waters. They take turns caring for their young.',
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ export async function seed(knex) {
       color: 'brown',
       size: 'small',
       habitat: 'New Nealand',
-      can_fly: false,
+      fly: false,
+      note: 'Native in NZ, known for their long beaks and nocturnal habits. Lay loong eggs relative to their size.',
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export async function seed(knex) {
       color: 'dark green, white',
       size: 'medium',
       habitat: 'New Zealand',
-      can_fly: true,
+      fly: true,
+      note: 'Native in NZ, known for their iridescent feathers and unique song. They are great mimics and play a key role in pollinating naative plants.',
     },
   ])
 }

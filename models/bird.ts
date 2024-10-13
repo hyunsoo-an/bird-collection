@@ -5,5 +5,5 @@ export default interface Bird {
   color: string
   size: string
   habitat: string
-  canFly: boolean
+  fly: boolean
 }

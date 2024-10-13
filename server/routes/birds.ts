@@ -54,5 +54,15 @@ router.post('/', async (req, res) => {
 })
 
 // Patch
+router.patch('/:id', async (req, res) => {
+  const updatedBird = req.body
+  try {
+    await db.updateBird(updatedBird)
+    res.sendStatus(200)
+  } catch (error) {
+    console.error(`Database error: ${error}`)
+    res.sendStatus(500)
+  }
+})
 
 export default router

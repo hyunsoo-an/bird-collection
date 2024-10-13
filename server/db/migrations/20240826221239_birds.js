@@ -10,7 +10,8 @@ export function up(knex) {
     table.string('color')
     table.string('size')
     table.string('habitat')
-    table.boolean('can_fly')
+    table.boolean('fly')
+    table.string('note')
   })
 }
 

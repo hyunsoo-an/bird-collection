@@ -4,13 +4,16 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { addBird } from '../apis/birdsApi.ts'
 
 function AddBird() {
-  const [{ birdName, type, color, size, habitat }, setFormValues] = useState({
-    birdName: '',
-    type: '',
-    color: '',
-    size: '',
-    habitat: '',
-  })
+  const [{ birdName, type, color, size, habitat, note, fly }, setFormValues] =
+    useState({
+      birdName: '',
+      type: '',
+      color: '',
+      size: '',
+      habitat: '',
+      note: '',
+      fly: false,
+    })
 
   const queryClient = useQueryClient()
 
@@ -22,10 +25,10 @@ function AddBird() {
   })
 
   const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = evt.currentTarget
+    const { name, value, type, checked } = evt.currentTarget
     setFormValues((previous) => ({
       ...previous,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }))
   }
 
@@ -37,6 +40,18 @@ function AddBird() {
       color,
       size,
       habitat,
+      note,
+      fly,
+    })
+
+    setFormValues({
+      birdName: '',
+      type: '',
+      color: '',
+      size: '',
+      habitat: '',
+      note: '',
+      fly: false,
     })
   }
 
@@ -109,6 +124,32 @@ function AddBird() {
           value={habitat}
           onChange={onChange}
           className="border border-gray-300 rounded w-full py-2 px-3"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="note" className="block text-sm font-medium mb-1">
+          Note
+        </label>
+        <input
+          type="text"
+          name="note"
+          id="note"
+          value={note}
+          onChange={onChange}
+          className="border border-gray-300 rounded w-full py-2 px-3"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="fly" className="block text-sm font-medium mb-1">
+          Fly
+        </label>
+        <input
+          type="checkbox"
+          name="fly"
+          id="fly"
+          checked={fly}
+          onChange={onChange}
+          className="mr-2 h-6 w-6"
         />
       </div>
       <button

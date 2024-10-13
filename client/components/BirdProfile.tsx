@@ -58,7 +58,10 @@ function BirdProfile() {
             <strong>Habitat:</strong> {bird.habitat}
           </p>
           <p>
-            <strong>Fly:</strong> {bird.canFly === 1 ? 'Yes' : 'No'}
+            <strong>Fly:</strong> {bird.fly === 1 ? 'Yes' : 'No'}
+          </p>
+          <p>
+            <strong>Note:</strong> {bird.note}
           </p>
         </div>
         <div className="flex justify-between">
@@ -80,3 +83,4 @@ function BirdProfile() {
 }
 
 export default BirdProfile
+// add edit bird(update)
