@@ -24,3 +24,9 @@ export async function addBird(newBird: Bird) {
   console.log(result.statusCode)
   return
 }
+
+export async function updateBird(id: number, updatedBird: Bird) {
+  const result = await request.patch(`/api/v1/birds/${id}`).send(updatedBird)
+  console.log(result.statusCode)
+  return
+}
