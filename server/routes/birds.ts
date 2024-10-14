@@ -62,8 +62,6 @@ router.patch('/:id', async (req, res) => {
     const result = await db.updateBird(Number(id), updatedBird)
     if (result) {
       res.sendStatus(200)
-    } else {
-      res.sendStatus(404)
     }
   } catch (error) {
     console.error(`Database error: ${error}`)
