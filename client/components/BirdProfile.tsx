@@ -83,4 +83,3 @@ function BirdProfile() {
 }
 
 export default BirdProfile
-// add edit bird(update)

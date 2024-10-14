@@ -36,6 +36,6 @@ export function addBird(newBird: Bird) {
 }
 
 // Updating bird
-export function updateBird(id: number) {
-  return db('birds').where({ id }).update
+export function updateBird(id: number, updatedBird: Bird) {
+  return db('birds').where({ id }).update(updatedBird)
 }

@@ -53,12 +53,18 @@ router.post('/', async (req, res) => {
   }
 })
 
-// Patch
+// PATCH
 router.patch('/:id', async (req, res) => {
+  const { id } = req.params
   const updatedBird = req.body
+
   try {
-    await db.updateBird(updatedBird)
-    res.sendStatus(200)
+    const result = await db.updateBird(Number(id), updatedBird)
+    if (result) {
+      res.sendStatus(200)
+    } else {
+      res.sendStatus(404)
+    }
   } catch (error) {
     console.error(`Database error: ${error}`)
     res.sendStatus(500)
