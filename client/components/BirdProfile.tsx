@@ -71,6 +71,11 @@ function BirdProfile() {
           >
             Delete Bird
           </button>
+          <Link to={`/birds/${id}/edit`}>
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+              Edit
+            </button>
+          </Link>
           <Link to={'/'}>
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
               Back

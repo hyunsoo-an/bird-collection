@@ -4,9 +4,9 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { addBird } from '../apis/birdsApi.ts'
 
 function AddBird() {
-  const [{ birdName, type, color, size, habitat, note, fly }, setFormValues] =
+  const [{ name, type, color, size, habitat, note, fly }, setFormValues] =
     useState({
-      birdName: '',
+      name: '',
       type: '',
       color: '',
       size: '',
@@ -35,7 +35,7 @@ function AddBird() {
   const onSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
     await addMutation.mutate({
-      name: birdName,
+      name,
       type,
       color,
       size,
@@ -67,9 +67,9 @@ function AddBird() {
         </label>
         <input
           type="text"
-          name="birdName"
-          id="birdName"
-          value={birdName}
+          name="name"
+          id="name"
+          value={name}
           onChange={onChange}
           className="border border-gray-300 rounded w-full py-2 px-3"
         />
