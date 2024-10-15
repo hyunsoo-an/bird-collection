@@ -30,7 +30,7 @@ export default function UpdateBirdProfile() {
           color: bird.color,
           size: bird.size,
           habitat: bird.habitat,
-          fly: bird.fly === 1, // Boolean으로 변환
+          fly: bird.fly === 1,
           note: bird.note,
         })
       } catch (error) {
@@ -60,105 +60,132 @@ export default function UpdateBirdProfile() {
   }
 
   return (
-    <>
-      <div className="p-1">
-        <div className="flex justify-end">
-          <Link to={'/birds'} className="btn-blue px-3 py-2 rounded-md">
+    <div
+      className="flex justify-center items-center min-h-screen"
+      style={{
+        backgroundImage: 'url(/images/bg.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="max-w-lg p-6 bg-white shadow-md rounded-lg">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold">Edit Bird Profile</h2>
+          <Link
+            to="/"
+            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+          >
             View All Birds
           </Link>
         </div>
-      </div>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="flex flex-col items-center text-center">
-          <h2>Edit Bird Profile</h2>
-          <form onSubmit={handleSubmit} className="form">
-            <div>
-              <label htmlFor="name">Name: </label>
-              <input
-                className="border-2 rounded-md"
-                type="text"
-                id="name"
-                name="name"
-                value={formValues.name || ''}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="type">Type: </label>
-              <input
-                className="border-2 rounded-md"
-                type="text"
-                id="type"
-                name="type"
-                value={formValues.type || ''}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="color">Color: </label>
-              <input
-                className="border-2 rounded-md"
-                type="text"
-                id="color"
-                name="color"
-                value={formValues.color || ''}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="size">Size: </label>
-              <input
-                className="border-2 rounded-md"
-                type="text"
-                id="size"
-                name="size"
-                value={formValues.size || ''}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="habitat">Habitat: </label>
-              <input
-                className="border-2 rounded-md"
-                type="text"
-                id="habitat"
-                name="habitat"
-                value={formValues.habitat || ''}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="fly">Fly: </label>
-              <select
-                id="fly"
-                name="fly"
-                value={formValues.fly ? 1 : 0}
-                onChange={handleChange}
-                className="border-2 rounded-md"
-              >
-                <option value={0}>No</option>
-                <option value={1}>Yes</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="note">Note: </label>
-              <textarea
-                id="note"
-                name="note"
-                value={formValues.note || ''}
-                onChange={handleChange}
-                className="border-2 rounded-md"
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="name" className="block font-semibold">
+              Name:
+            </label>
+            <input
+              className="w-full border-2 rounded-md p-2"
+              type="text"
+              id="name"
+              name="name"
+              value={formValues.name || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="type" className="block font-semibold">
+              Type:
+            </label>
+            <input
+              className="w-full border-2 rounded-md p-2"
+              type="text"
+              id="type"
+              name="type"
+              value={formValues.type || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="color" className="block font-semibold">
+              Color:
+            </label>
+            <input
+              className="w-full border-2 rounded-md p-2"
+              type="text"
+              id="color"
+              name="color"
+              value={formValues.color || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="size" className="block font-semibold">
+              Size:
+            </label>
+            <input
+              className="w-full border-2 rounded-md p-2"
+              type="text"
+              id="size"
+              name="size"
+              value={formValues.size || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="habitat" className="block font-semibold">
+              Habitat:
+            </label>
+            <input
+              className="w-full border-2 rounded-md p-2"
+              type="text"
+              id="habitat"
+              name="habitat"
+              value={formValues.habitat || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="fly" className="block font-semibold">
+              Fly:
+            </label>
+            <select
+              id="fly"
+              name="fly"
+              value={formValues.fly ? 1 : 0}
+              onChange={handleChange}
+              className="w-full border-2 rounded-md p-2"
+            >
+              <option value={0}>No</option>
+              <option value={1}>Yes</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="note" className="block font-semibold">
+              Note:
+            </label>
+            <textarea
+              id="note"
+              name="note"
+              value={formValues.note || ''}
+              onChange={handleChange}
+              className="w-full border-2 rounded-md p-2"
+            />
+          </div>
+          <div className="flex justify-between mt-6">
             <button
               type="submit"
-              className="btn-blue mt-3 px-3 py-2 rounded-md"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
             >
               Update Bird
             </button>
-          </form>
-        </div>
+            <Link to={`/birds/${id}`}>
+              <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+                Cancel
+              </button>
+            </Link>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   )
 }
