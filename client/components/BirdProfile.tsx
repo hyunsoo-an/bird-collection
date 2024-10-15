@@ -34,7 +34,22 @@ function BirdProfile() {
         backgroundPosition: 'center',
       }}
     >
-      <div className="max-w-lg p-6 bg-white shadow-md rounded-lg">
+      <div className="max-w-lg p-6 bg-white shadow-md rounded-lg relative">
+        {/* Buttons moved to the top-right */}
+        <div className="absolute top-4 right-4 space-x-2">
+          <button
+            onClick={handleDelete}
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+          >
+            Delete
+          </button>
+          <Link to={`/birds/${id}/edit`}>
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+              Edit
+            </button>
+          </Link>
+        </div>
+
         <h1 className="text-2xl font-bold mb-4">Bird Profile</h1>
         <div className="mb-4">
           <img
@@ -64,18 +79,9 @@ function BirdProfile() {
             <strong>Note:</strong> {bird.note}
           </p>
         </div>
-        <div className="flex justify-between">
-          <button
-            onClick={handleDelete}
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Delete Bird
-          </button>
-          <Link to={`/birds/${id}/edit`}>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              Edit
-            </button>
-          </Link>
+
+        {/* Back button remains at the bottom */}
+        <div className="flex justify-center mt-6">
           <Link to={'/'}>
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
               Back

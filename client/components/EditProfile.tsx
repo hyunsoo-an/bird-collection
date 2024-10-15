@@ -68,7 +68,7 @@ export default function UpdateBirdProfile() {
         backgroundPosition: 'center',
       }}
     >
-      <div className="max-w-lg p-6 bg-white shadow-md rounded-lg">
+      <div className="w-full max-w-xl p-6 bg-white shadow-md rounded-lg">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Edit Bird Profile</h2>
           <Link
