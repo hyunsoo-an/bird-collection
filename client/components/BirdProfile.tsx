@@ -35,7 +35,6 @@ function BirdProfile() {
       }}
     >
       <div className="max-w-lg p-6 bg-white shadow-md rounded-lg relative">
-        {/* Buttons moved to the top-right */}
         <div className="absolute top-4 right-4 space-x-2">
           <button
             onClick={handleDelete}
@@ -80,7 +79,6 @@ function BirdProfile() {
           </p>
         </div>
 
-        {/* Back button remains at the bottom */}
         <div className="flex justify-center mt-6">
           <Link to={'/'}>
             <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">

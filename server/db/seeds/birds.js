@@ -22,7 +22,7 @@ export async function seed(knex) {
       type: 'apterygidae',
       color: 'brown',
       size: 'small',
-      habitat: 'New Nealand',
+      habitat: 'New Zealand',
       fly: false,
       note: 'Native in NZ, known for their long beaks and nocturnal habits. Lay loong eggs relative to their size.',
     },

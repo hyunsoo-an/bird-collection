@@ -17,10 +17,20 @@ function Birds() {
     return <p>Error: {error.message}</p>
   }
 
+  const birds = data || []
+  const emptySlots = (5 - (birds.length % 5)) % 5
+
+  const handleEmptySlotClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Scrolls smoothly to the top
+    })
+  }
+
   return (
     <>
       <h2 className="text-2xl font-semibold mb-4">All Birds</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {data.map((bird) => (
           <div
             key={bird.id}
@@ -34,6 +44,15 @@ function Birds() {
               />
               <p className="p-4 text-center font-medium">{bird.name}</p>
             </Link>
+          </div>
+        ))}
+        {Array.from({ length: emptySlots }).map((_, index) => (
+          <div
+            key={`empty-${index}`}
+            className="bg-gray-300 h-50 w-full border border-gray-300 rounded-lg flex justify-center items-center cursor-pointer"
+            onClick={handleEmptySlotClick}
+          >
+            <p className="text-gray-600">Add a Bird</p>
           </div>
         ))}
       </div>

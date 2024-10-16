@@ -17,7 +17,7 @@ function App() {
           <AddBird />
         </div>
       </section>
-      <section className="w-full max-w-2xl">
+      <section className="w-full max-w-7xl ">
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <Birds />
         </div>
