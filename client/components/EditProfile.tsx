@@ -61,14 +61,17 @@ export default function UpdateBirdProfile() {
 
   return (
     <div
-      className="flex justify-center items-center min-h-screen"
+      className="flex justify-center items-center min-h-screen bg-cover bg-center relative"
       style={{
         backgroundImage: 'url(/images/bg.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="w-full max-w-xl p-6 bg-white shadow-md rounded-lg">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+
+      <div className="w-full max-w-xl p-6 bg-white shadow-md rounded-lg z-10">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Edit Bird Profile</h2>
           <Link

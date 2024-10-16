@@ -34,6 +34,7 @@ function BirdProfile() {
         backgroundPosition: 'center',
       }}
     >
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
       <div className="max-w-lg p-6 bg-white shadow-md rounded-lg relative">
         <div className="absolute top-4 right-4 space-x-2">
           <button
