@@ -14,6 +14,7 @@ export function getAllBirds(): Promise<Bird[]> {
     'habitat',
     'fly',
     'note',
+    'image',
   )
 }
 
@@ -22,7 +23,17 @@ export function getBirdById(id: number): Promise<Bird> {
   return db('birds')
     .where({ id })
     .first()
-    .select('id', 'name', 'type', 'color', 'size', 'habitat', 'fly', 'note')
+    .select(
+      'id',
+      'name',
+      'type',
+      'color',
+      'size',
+      'habitat',
+      'fly',
+      'note',
+      'image',
+    )
 }
 
 // Deleting bird
