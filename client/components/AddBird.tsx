@@ -57,7 +57,7 @@ function AddBird() {
 
   return (
     <form
-      className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4"
       onSubmit={onSubmit}
     >
       <h2 className="text-2xl font-semibold mb-4">Add a New Bird</h2>
