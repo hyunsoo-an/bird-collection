@@ -23,7 +23,7 @@ function Birds() {
   const handleEmptySlotClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Scrolls smoothly to the top
+      behavior: 'auto',
     })
   }
 

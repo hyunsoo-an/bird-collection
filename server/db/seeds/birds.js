@@ -34,7 +34,7 @@ export async function seed(knex) {
       size: 'medium',
       habitat: 'New Zealand',
       fly: true,
-      note: 'Native in NZ, known for their iridescent feathers and unique song. They are great mimics and play a key role in pollinating naative plants.',
+      note: 'Native in NZ, known for their iridescent feathers and unique song. They are great mimics and play a key role in pollinating native plants.',
     },
   ])
 }
