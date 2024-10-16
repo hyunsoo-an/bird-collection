@@ -12,6 +12,7 @@ export function up(knex) {
     table.string('habitat')
     table.boolean('fly')
     table.string('note')
+    table.string('image')
   })
 }
 
