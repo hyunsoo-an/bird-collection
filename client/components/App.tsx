@@ -7,7 +7,6 @@ function App() {
       className="flex flex-col p-4 min-h-screen bg-cover bg-center items-center relative"
       style={{ backgroundImage: 'url(/images/bg.jpg)' }}
     >
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 
       <header className="mb-6 z-10">
