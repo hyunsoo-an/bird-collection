@@ -53,7 +53,7 @@ function BirdProfile() {
         <h1 className="text-2xl font-bold mb-4">Bird Profile</h1>
         <div className="mb-4">
           <img
-            src={'/images/bird-profile.avif'}
+            src={'/images/bird-profile.jpg'}
             alt={`Profile of ${bird.name}`}
             className="w-full h-full object-cover rounded-md mb-4"
           />

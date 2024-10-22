@@ -38,7 +38,7 @@ function Birds() {
           >
             <Link to={`/birds/${bird.id}`}>
               <img
-                src={'/images/bird-profile.avif'}
+                src={'/images/bird-profile.jpg'}
                 alt={`Profile of ${bird.name}`}
                 className="w-full h-40 object-cover"
               />
