@@ -16,6 +16,7 @@ export default function UpdateBirdProfile() {
     habitat: '',
     fly: false,
     note: '',
+    // image: null,
   })
 
   const editBirdProfile = useEditBirdProfile(Number(id))
@@ -32,6 +33,7 @@ export default function UpdateBirdProfile() {
           habitat: bird.habitat,
           fly: bird.fly === 1,
           note: bird.note,
+          // image: bird.image,
         })
       } catch (error) {
         console.error('Failed to fetch bird data:', error)
@@ -55,7 +57,7 @@ export default function UpdateBirdProfile() {
     const { name, value } = event.target
     setFormValues((prevValues) => ({
       ...prevValues,
-      [name]: name === 'fly' ? event.target.value === '1' : value,
+      [name]: name === 'fly' ? value === '1' : value,
     }))
   }
 
@@ -68,7 +70,6 @@ export default function UpdateBirdProfile() {
         backgroundPosition: 'center',
       }}
     >
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 
       <div className="w-full max-w-xl p-6 bg-white shadow-md rounded-lg z-10">
@@ -174,6 +175,19 @@ export default function UpdateBirdProfile() {
               className="w-full border-2 rounded-md p-2"
             />
           </div>
+          {/* <div>
+            <label htmlFor="image" className="block font-semibold">
+              Image
+            </label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              onChange={handleChange}
+              accept="image/*"
+              className="w-full border-2 rounded-md p-2"
+            />
+          </div> */}
           <div className="flex justify-between mt-6">
             <button
               type="submit"

@@ -4,16 +4,19 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { addBird } from '../apis/birdsApi.ts'
 
 function AddBird() {
-  const [{ name, type, color, size, habitat, note, fly }, setFormValues] =
-    useState({
-      name: '',
-      type: '',
-      color: '',
-      size: '',
-      habitat: '',
-      note: '',
-      fly: false,
-    })
+  const [
+    { name, type, color, size, habitat, note, fly, image },
+    setFormValues,
+  ] = useState({
+    name: '',
+    type: '',
+    color: '',
+    size: '',
+    habitat: '',
+    note: '',
+    fly: false,
+    image: null, // 이미지 필드 추가
+  })
 
   const queryClient = useQueryClient()
 
@@ -25,15 +28,29 @@ function AddBird() {
   })
 
   const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = evt.currentTarget
+    const { name, value, type, checked, files } = evt.currentTarget
     setFormValues((previous) => ({
       ...previous,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === 'checkbox' ? checked : files ? files[0] : value,
     }))
   }
 
   const onSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
+
+    // FormData로 이미지 및 다른 데이터를 전송
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('type', type)
+    formData.append('color', color)
+    formData.append('size', size)
+    formData.append('habitat', habitat)
+    formData.append('note', note)
+    formData.append('fly', fly.toString())
+    if (image) {
+      formData.append('image', image)
+    }
+
     await addMutation.mutate({
       name,
       type,
@@ -42,16 +59,18 @@ function AddBird() {
       habitat,
       note,
       fly,
+      image: image ? URL.createObjectURL(image) : null, // 이미지를 추가
     })
 
     setFormValues({
-      birdName: '',
+      name: '',
       type: '',
       color: '',
       size: '',
       habitat: '',
       note: '',
       fly: false,
+      image: null,
     })
   }
 
@@ -150,6 +169,19 @@ function AddBird() {
           checked={fly}
           onChange={onChange}
           className="mr-2 h-5 w-5"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="image" className="block text-sm font-medium mb-1">
+          Image
+        </label>
+        <input
+          type="file"
+          name="image"
+          id="image"
+          onChange={onChange}
+          accept="image/*"
+          className="border border-gray-300 rounded w-full py-2 px-3"
         />
       </div>
       <button
