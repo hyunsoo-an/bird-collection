@@ -15,7 +15,7 @@ export async function seed(knex) {
       habitat: 'antarctic',
       fly: false,
       note: 'They are known for swimming skillfully in cold waters. They take turns caring for their young.',
-      image: '',
+      image: '/images/penguin.avif',
     },
     {
       id: 2,
@@ -37,6 +37,17 @@ export async function seed(knex) {
       habitat: 'New Zealand',
       fly: true,
       note: 'Native in NZ, known for their iridescent feathers and unique song. They are great mimics and play a key role in pollinating native plants.',
+      image: '/images/tui.avif',
+    },
+    {
+      id: 4,
+      name: 'Eagle',
+      type: 'accipitridae',
+      color: 'brown, white',
+      size: 'large',
+      habitat: 'mountains and forests',
+      fly: true,
+      note: 'Known for their sharp vision and powerful flight. They are apex predators in many environments.',
       image: '',
     },
   ])

@@ -55,7 +55,7 @@ function BirdProfile() {
           <img
             src={bird.image || '/images/bird-profile.jpg'}
             alt={`Profile of ${bird.name}`}
-            className="w-full h-80 object-cover rounded"
+            className="w-full max-w-lg min-w-[300px] h-80 object-cover rounded"
           />
           <p className="text-lg mt-3">
             <strong>Name:</strong> {bird.name}

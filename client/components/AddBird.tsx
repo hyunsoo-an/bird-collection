@@ -15,7 +15,7 @@ function AddBird() {
     habitat: '',
     note: '',
     fly: false,
-    image: null, // 이미지 필드 추가
+    image: null,
   })
 
   const queryClient = useQueryClient()
@@ -38,7 +38,6 @@ function AddBird() {
   const onSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
 
-    // FormData로 이미지 및 다른 데이터를 전송
     const formData = new FormData()
     formData.append('name', name)
     formData.append('type', type)
@@ -59,7 +58,7 @@ function AddBird() {
       habitat,
       note,
       fly,
-      image: image ? URL.createObjectURL(image) : null, // 이미지를 추가
+      image: image ? URL.createObjectURL(image) : null,
     })
 
     setFormValues({

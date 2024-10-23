@@ -7,5 +7,5 @@ export default interface Bird {
   habitat: string
   fly: boolean
   note: string
-  image?: string
+  image: string
 }
