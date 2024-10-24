@@ -191,3 +191,4 @@ export default function UpdateBirdProfile() {
     </div>
   )
 }
+// need to add edit image
