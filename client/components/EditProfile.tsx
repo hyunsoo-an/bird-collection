@@ -16,7 +16,6 @@ export default function UpdateBirdProfile() {
     habitat: '',
     fly: false,
     note: '',
-    // image: null,
   })
 
   const editBirdProfile = useEditBirdProfile(Number(id))
@@ -33,7 +32,6 @@ export default function UpdateBirdProfile() {
           habitat: bird.habitat,
           fly: bird.fly === 1,
           note: bird.note,
-          // image: bird.image,
         })
       } catch (error) {
         console.error('Failed to fetch bird data:', error)
@@ -175,19 +173,6 @@ export default function UpdateBirdProfile() {
               className="w-full border-2 rounded-md p-2"
             />
           </div>
-          {/* <div>
-            <label htmlFor="image" className="block font-semibold">
-              Image
-            </label>
-            <input
-              type="file"
-              name="image"
-              id="image"
-              onChange={handleChange}
-              accept="image/*"
-              className="w-full border-2 rounded-md p-2"
-            />
-          </div> */}
           <div className="flex justify-between mt-6">
             <button
               type="submit"
